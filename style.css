@@ -1,0 +1,52 @@
+html {
+    font-size: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/*-------------------- SCREEN ----------------*/
+
+#screen {
+    width: 100vw;
+    height: 56.25vw;
+    position: relative;
+}
+
+
+/*-------------------- GAME ----------------*/
+
+#game {
+
+    background-color: #6fd9e2;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/*-------- GAME BACKGROUND ---------*/
+
+/*-------- GAME ELEMENTS ---------*/
+
+/*-------- FOREGROUND ---------*/
+
+/*-------- GAME UI ---------*/
+
+/*--- SCORE BOARD -----*/
+
+/*--- ENERGY BOARD -----*/
+
+/*--- TIME BOARD -----*/
+
+/*-------- INTRODUCTION ---------*/
+
+/*-------- START ---------*/
+
+/*-------- GAME OVER ---------*/
+
+/*-------- LEVEL COMPLETE ---------*/
+
+/*-------------------- ANIMATIONS ----------------*/
+
