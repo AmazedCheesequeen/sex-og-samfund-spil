@@ -6,6 +6,22 @@ body {
     padding: 0;
 }
 
+/*-------------------- FONTS -----------------*/
+
+@font-face {
+    font-family: 'roboto';
+    src: url('fonts/roboto-light-webfont.woff2') format('woff2'),
+         url('fonts/roboto-light-webfont.woff') format('woff');
+
+}
+
+@font-face {
+    font-family: 'vag';
+    src: url('fonts/vag_rounded_light-webfont.woff2') format('woff2'),
+         url('fonts/vag_rounded_light-webfont.woff') format('woff');
+
+}
+
 /*-------------------- SCREEN ----------------*/
 
 #screen {
