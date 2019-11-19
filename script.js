@@ -4,7 +4,7 @@ let start = document.querySelector("#start");
 let startButton = document.querySelector("#start_button");
 
 let introduction = document.querySelector("#introduction");
-let introStartButton = document.querySelector("#intro_start_button");
+let introButton = document.querySelector("#intro_button");
 
 let animal_1 = document.querySelector("#ani_1");
 let animal_2 = document.querySelector("#ani_2");
@@ -36,7 +36,6 @@ let delButton = document.querySelector("#del_button")
 
 let point = 0;
 let time = 30;
-let life = 1;
 
 let pointLabel = docuement.querySelector("#scoreboard")
 
@@ -66,7 +65,7 @@ function startScreen () {
 
     startButton.classList.add("pulse");
 
-    //Når man klikker på knap sendes man videre til næste funktion
+    //Når man klikker på knap sendes man videre til intro skærm
 
     startButton.addEventListener("click", hideStart);
 
@@ -112,17 +111,86 @@ function chooseGoodOrBad () {
 
 function intro () {
 
+    //Vis ikke startskærm og knap
+
+    start.style.display="none";
+    startButton.style.display="none";
+
     //Fjern anímationer og eventlistener
     start.classList.remove("fade_out");
     startButton.removeEventListener("animationend", intro);
 
 
-    life = 1;
+    //Vis intro og knap
+
+    introduction.display="block";
+    introButton.display="block";
+
+    //Start pulse animation på knap
+
+    introButton.classList.add("pulse");
+
+    //Nulstil tid og point
     point = 0;
     time = 30;
 
-    pointLabel.innerHTML = ""+ point +" point"
+    pointLabel.innerHTML = ""+ point +" point";
     scoreboard.innerHTML = ""+ time +" sek tilbage";
 
+    //Når man klikker på knap sendes man videre til spil skærm
+
+    introButton.addEventListener("click", hideIntro);
+
 }
+
+function hideIntro () {
+
+    //Fjern animation og eventlistener
+
+    introtButton.classList.remove("pulse");
+    introButton.removeEventListener("click",hideIntro);
+
+    //Start fade ud animation
+
+    introduction.classList.add("fade_out");
+
+    //Når skærmen er faded ud vis introduktion
+
+    introButton.addEventListener("animationend", startGame);
+}
+
+function startGame () {
+
+     //Vis ikke intro skærm og knap
+
+    introduction.style.display="none";
+    introButton.style.display="none";
+
+    //Fjern anímationer og eventlistener
+    intro.classList.remove("fade_out");
+    introButton.removeEventListener("animationend", startGame);
+
+    //Vis anmeld og del knapper
+
+    anmeldButton.display="block":
+    delButton.display="block";
+
+    //Add eventlistener
+
+    anmeldButton.addEventListener("click", clickAnmeld);
+    delButton.addEventListener("click" , clickDel);
+
+
+}
+
+function clickDel () {
+
+
+
+}
+
+function clickAnmeld () {
+
+}
+
 
