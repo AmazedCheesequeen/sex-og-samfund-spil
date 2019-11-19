@@ -1,52 +1,42 @@
 //Variabler
 
+//Start skærm og elementer
 let start = document.querySelector("#start");
 let startButton = document.querySelector("#start_button");
 
+//Intro skærm og elementer
 let introduction = document.querySelector("#introduction");
 let introButton = document.querySelector("#intro_button");
 
-let animal_1 = document.querySelector("#ani_1");
-let animal_2 = document.querySelector("#ani_2");
-let animal_3 = document.querySelector("#ani_3");
-let animal_4 = document.querySelector("#ani_4");
-let animal_5 = document.querySelector("#ani_5");
-let animal_6 = document.querySelector("#ani_6");
-let animal_7 = document.querySelector("#ani_7");
-let animal_8 = document.querySelector("#ani_8");
-let animal_9 = document.querySelector("#ani_9");
-let animal_10 = document.querySelector("#ani_10");
-let animal_11 = document.querySelector("#ani_11");
+// Game elementer
+let currentImage;
 
-let nude_1 = document.querySelector("#skin_1");
-let nude_2 = document.querySelector("#skin_2");
-let nude_3 = document.querySelector("#skin_3");
-let nude_4 = document.querySelector("#skin_4");
-let nude_5 = document.querySelector("#skin_5");
-let nude_6 = document.querySelector("#skin_6");
-let nude_7 = document.querySelector("#skin_7");
-let nude_8 = document.querySelector("#skin_8");
-let nude_9 = document.querySelector("#skin_9");
-let nude_10 = document.querySelector("#skin_10");
-let nude_11= document.querySelector("#skin_11");
-let nude_12 = document.querySelector("#skin_12");
 
+//Knapper i spillet
 let anmeldButton = document.querySelector("#anmeld_button");
 let delButton = document.querySelector("#del_button")
 
+//Tid og point
 let point = 0;
 let time = 30;
 
 let pointLabel = docuement.querySelector("#scoreboard")
+let gameTime;
 
-
+//Level complete skærm og elementer
 let levelCompleteScreen = document.querySelector("#level_complete");
 
-
+//Game over skærm og elementer
 let gameOverScreen = document.querySelector("#game_over");
 
 
+//Lyde
 let backgroundMusic = document.querySelector("#background_music");
+let levelCompleteSound = document.querySelector("#level_complete_sound");
+let gameOverSound = document.querySelector("#game_over_sound");
+let anmeldSound = document.querySelector("#click_anmeld_sound");
+let delSound = document.querySelector("#click_del_sound");
+
 
 
 //Vis start skærm når siden er loaded
@@ -98,12 +88,43 @@ function hideStart () {
 
 function chooseGoodOrBad () {
 
-    if(Math.random >0.5) {
+    //Fjerner animation og eventlistener, hvis det ikke er første gang funktionen er i brug
+
+    if(currentImage != null){
+
+        currentImage.classList.remove("scroll_out");
+        currentImage.removeEventListener("animationend",chooseGoodOrBad);
+    }
+
+    // Laver if sætning, hvor der er 50% chance for nude eller dyrebillede
+
+    if(Math.random () >0.5) {
+
+        //Tilfældigt hvilket dyr vises og samme dyr får en animation på
+
+        let randomAnimal = Math.floor(Math.random()*Math.floor(11))+1;
+
+        document.querySelector("#ani_"+randomAnimal).style.display="block";
+        document.querySelector("#ani_"+randomAnimal).classList.add("scroll_in");
+
+        //Lader variablen være det viste billede
+
+        currentImage = document.querySelector("#ani_"+randomAnimal);
 
     }
 
     else {
 
+        //Viser tilfældig nude og samme nude får en animation på
+
+        let randomNude = Math.floor(Math.random()*Math.floor(12))+1;
+
+        document.querySelector("#skin_"+randomNude).style.display="block";
+        document.querySelector("#skin_"+randomNude).classList.add("scroll_in");
+
+        //Lader variablen være det viste billede
+
+        currentImage = document.querySelector("#skin_"+randomNude);
 
     }
 
@@ -130,12 +151,6 @@ function intro () {
 
     introButton.classList.add("pulse");
 
-    //Nulstil tid og point
-    point = 0;
-    time = 30;
-
-    pointLabel.innerHTML = ""+ point +" point";
-    scoreboard.innerHTML = ""+ time +" sek tilbage";
 
     //Når man klikker på knap sendes man videre til spil skærm
 
@@ -170,6 +185,16 @@ function startGame () {
     intro.classList.remove("fade_out");
     introButton.removeEventListener("animationend", startGame);
 
+    //Nulstil tid og point
+    point = 0;
+    time = 30;
+
+    pointLabel.innerHTML = ""+ point +" point";
+    time.innerHTML = ""+ time +" sek tilbage";
+
+    //Sæt tiden til at gå ned 1 sek af gangen
+    gameTime =  setInterval(timer,1000);
+
     //Vis anmeld og del knapper
 
     anmeldButton.display="block":
@@ -185,12 +210,106 @@ function startGame () {
 
 function clickDel () {
 
+    //Fjern eventlistener og animation
+    delButton.removeEventListener("click" , clickDel);
+
+    currentImage.classList.remove("scroll_in");
+
+    //Afspil lyd
+    delSound.load();
+    delSound.play();
+
+    //Tilføj forsvind animation til billede
+    currentImage.classList.add("scroll_out");
+
+    if(currentImage.id.includes("skin")){
+
+        gameOver ();
+    }
+
+    else {
+        point++
+        pointLabel.innerHTML = ""+ point +" point";
+
+        currentImage.addEventListener("animationend",chooseGoodOrBad);
+    }
+
+
 
 
 }
 
 function clickAnmeld () {
 
+    //Fjern eventlistener og animation
+    delButton.removeEventListener("click" , clickAnmeld);
+
+    currentImage.classList.remove("scroll_in");
+
+    //Afspil lyd
+    AnmeldSound.load();
+    AnmeldSound.play();
+
+    //Tilføj forsvind animation til billede
+    currentImage.classList.add("scroll_out");
+
+
+    if(currentImage.id.includes("skin")){
+
+        point++
+        pointLabel.innerHTML = ""+ point +"/11 point";
+
+        currentImage.addEventListener("animationend",chooseGoodOrBad);
+    }
+
+    else {
+        point--
+        pointLabel.innerHTML = ""+ point +"/11 point";
+
+        currentImage.addEventListener("animationend",chooseGoodOrBad);
+    }
+
+
 }
+
+function timer () {
+
+    // Lad tiden gå ned 1 swk af gangen
+
+    time --;
+
+    // Stop spillet hvis tiden er under 0
+
+    if (time < 0) {
+
+        if() {
+            levelComplete()
+        }
+
+        else{
+            gameOver();
+        }
+    }
+
+    //Hvis tiden er over 0 bliv ved med at tælle ned
+
+    else{
+
+        time.innerHTML = ""+ time +" sek tilbage";
+
+    }
+}
+
+function gameOver(){}
+
+function levelComplete () {}
+
+function highScore () {}
+
+function tryAgain () {}
+
+function goToMenu () {}
+
+
 
 
