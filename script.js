@@ -20,7 +20,8 @@ let delButton = document.querySelector("#del_button")
 let point = 0;
 let time = 30;
 
-let pointLabel = docuement.querySelector("#scoreboard")
+let pointButton = document.querySelector("#score_button")
+let pointLabel = docuement.querySelector("#score_text")
 let gameTime;
 
 //Level complete skærm og elementer
@@ -28,6 +29,7 @@ let levelCompleteScreen = document.querySelector("#level_complete");
 
 //Game over skærm og elementer
 let gameOverScreen = document.querySelector("#game_over");
+let replayButton = document.querySelector("#try_again_button");
 
 
 //Lyde
@@ -57,20 +59,25 @@ function startScreen () {
 
     //Når man klikker på knap sendes man videre til intro skærm
 
-    startButton.addEventListener("click", hideStart);
+    startButton.addEventListener("click", intro);
 
 }
 
-function hideStart () {
+function intro () {
 
-    //Fjern animation og eventlistener
 
+    //Fjern knap, animation og eventlistener
+
+    startButton.removeEventListener("click",intro);
+    startButton.style.display="none";
     startButton.classList.remove("pulse");
-    startButton.removeEventListener("click",hideStart);
 
-    //Start fade ud animation
+    //Vis intro
+    introduction.display="block";
+    introButton.display="block";
 
-    start.classList.add("fade_out");
+    //Tilføj animation
+    introButton.classList.add("pulse");
 
     //Load og start musik
 
@@ -83,14 +90,37 @@ function hideStart () {
 
     //Når skærmen er faded ud vis introduktion
 
-    startButton.addEventListener("animationend", intro);
+    startButton.addEventListener("click", hideIntro);
 }
+
+
+
+function hideIntro () {
+
+    //Fjern animation og eventlistener
+
+    introtButton.classList.remove("pulse");
+    introButton.removeEventListener("click",hideIntro);
+
+
+
+    //Start ud animation
+
+    introduction.classList.add("disappear");
+    start.classList.add("disappear");
+
+    //Når skærmen er væk vis selve spillet
+
+    start.addEventListener("animationend", startGame);
 
 function chooseGoodOrBad () {
 
     //Fjerner animation og eventlistener, hvis det ikke er første gang funktionen er i brug
 
     if(currentImage != null){
+
+        delButton.classList.remove("scale");
+         anmeldButton.classList.remove("scale");
 
         currentImage.classList.remove("scroll_out");
         currentImage.removeEventListener("animationend",chooseGoodOrBad);
@@ -130,64 +160,26 @@ function chooseGoodOrBad () {
 
 }
 
-function intro () {
 
-    //Vis ikke startskærm og knap
-
-    start.style.display="none";
-    startButton.style.display="none";
-
-    //Fjern anímationer og eventlistener
-    start.classList.remove("fade_out");
-    startButton.removeEventListener("animationend", intro);
-
-
-    //Vis intro og knap
-
-    introduction.display="block";
-    introButton.display="block";
-
-    //Start pulse animation på knap
-
-    introButton.classList.add("pulse");
-
-
-    //Når man klikker på knap sendes man videre til spil skærm
-
-    introButton.addEventListener("click", hideIntro);
-
-}
-
-function hideIntro () {
-
-    //Fjern animation og eventlistener
-
-    introtButton.classList.remove("pulse");
-    introButton.removeEventListener("click",hideIntro);
-
-    //Start fade ud animation
-
-    introduction.classList.add("fade_out");
-
-    //Når skærmen er faded ud vis introduktion
-
-    introButton.addEventListener("animationend", startGame);
 }
 
 function startGame () {
 
-     //Vis ikke intro skærm og knap
+     //Vis ikke intro og start skærm og knap
 
     introduction.style.display="none";
     introButton.style.display="none";
+    start.style.display="none";
 
     //Fjern anímationer og eventlistener
-    intro.classList.remove("fade_out");
-    introButton.removeEventListener("animationend", startGame);
+    introduction.classList.remove("disappear");
+    start.classList.remove("disappear");
+    start.removeEventListener("animationend", startGame);
 
     //Nulstil tid og point
     point = 0;
     time = 30;
+
 
     pointLabel.innerHTML = ""+ point +" point";
     time.innerHTML = ""+ time +" sek tilbage";
@@ -195,15 +187,11 @@ function startGame () {
     //Sæt tiden til at gå ned 1 sek af gangen
     gameTime =  setInterval(timer,1000);
 
-    //Vis anmeld og del knapper
-
-    anmeldButton.display="block":
-    delButton.display="block";
 
     //Add eventlistener
 
     anmeldButton.addEventListener("click", clickAnmeld);
-    delButton.addEventListener("click" , clickDel);
+    delButton.addEventListener("click", clickDel);
 
 
 }
@@ -211,7 +199,7 @@ function startGame () {
 function clickDel () {
 
     //Fjern eventlistener og animation
-    delButton.removeEventListener("click" , clickDel);
+    delButton.removeEventListener("click", clickDel);
 
     currentImage.classList.remove("scroll_in");
 
@@ -219,8 +207,13 @@ function clickDel () {
     delSound.load();
     delSound.play();
 
+    //Tilføj animation på knap
+
+    delButton.classList.add("scale");
+
     //Tilføj forsvind animation til billede
     currentImage.classList.add("scroll_out");
+
 
     if(currentImage.id.includes("skin")){
 
@@ -250,6 +243,10 @@ function clickAnmeld () {
     AnmeldSound.load();
     AnmeldSound.play();
 
+     //Tilføj animation på knap
+    anmeldButton.classList.add("scale");
+
+
     //Tilføj forsvind animation til billede
     currentImage.classList.add("scroll_out");
 
@@ -257,14 +254,14 @@ function clickAnmeld () {
     if(currentImage.id.includes("skin")){
 
         point++
-        pointLabel.innerHTML = ""+ point +"/11 point";
+        pointLabel.innerHTML = ""+ point +" point";
 
         currentImage.addEventListener("animationend",chooseGoodOrBad);
     }
 
     else {
         point--
-        pointLabel.innerHTML = ""+ point +"/11 point";
+        pointLabel.innerHTML = ""+ point +" point";
 
         currentImage.addEventListener("animationend",chooseGoodOrBad);
     }
@@ -274,7 +271,7 @@ function clickAnmeld () {
 
 function timer () {
 
-    // Lad tiden gå ned 1 swk af gangen
+    // Lad tiden gå ned 1 sek af gangen
 
     time --;
 
@@ -286,9 +283,6 @@ function timer () {
             levelComplete()
         }
 
-        else{
-            gameOver();
-        }
     }
 
     //Hvis tiden er over 0 bliv ved med at tælle ned
@@ -300,15 +294,82 @@ function timer () {
     }
 }
 
-function gameOver(){}
+function gameOver() {
 
-function levelComplete () {}
+    //Fjern animationer og eventlistener
+    anmeldButton.removeEventListener("click", clickAnmeld);
+    delButton.removeEventListener("click", clickDel);
+    currentImage.classList.remove("scroll_out");
 
-function highScore () {}
+    //Vis skærm og knap
 
-function tryAgain () {}
+    gameOverScreen.style.display ="block";
+    replayButton.style.display="block";
 
-function goToMenu () {}
+    //Stop baggrundsmusik
+    backgroundMusic.pause();
+
+
+    //Afspil lyd
+    gameOverSound.load();
+    gameOverSound.play();
+
+    //Tilføj animation
+    replayButton.classList.add("pulse");
+
+    //Tilføj eventlistener
+    replayButton.addEventListener("click", tryAgain);
+
+
+}
+
+function levelComplete () {
+
+    //Fjern animationer og eventlistener
+    anmeldButton.removeEventListener("click", clickAnmeld);
+    delButton.removeEventListener("click", clickDel);
+    currentImage.classList.remove("scroll_out");
+
+    //Vis skærm og knap
+
+    levelComplete.style.display ="block";
+    replayButton.style.display="block";
+
+    //Stop baggrundsmusik
+    backgroundMusic.pause();
+
+    //Afspil lyd
+    levelCompleteSound.load();
+    levelCompleteSound.play();
+
+    //Tilføj animation
+    replayButton.classList.add("pulse");
+
+    //Tilføj eventlistener
+    replayButton.addEventListener("click", tryAgain);
+
+}
+
+function tryAgain () {
+
+    //Fjern knap og skærme
+    gameOverScreen.style.display ="none";
+    levelComplete.style.display ="none";
+    replayButton.style.display="none";
+
+    //Fjern animation og eventlistener
+    replayButton.classList.remove("pulse");
+    replayButton.removeEventListener("click", tryAgain);
+
+    //Stop lyde
+    levelCompleteSound.pause();
+    gameOverSound.pause();
+
+    //Send til start
+
+    startScreen ();
+}
+
 
 
 
