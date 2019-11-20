@@ -21,7 +21,7 @@ let point = 0;
 let time = 30;
 
 let pointButton = document.querySelector("#score_button")
-let pointLabel = docuement.querySelector("#score_text")
+let pointLabel = document.querySelector("#score_text")
 let gameTime;
 
 //Level complete skærm og elementer
