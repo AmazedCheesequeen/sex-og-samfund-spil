@@ -29,7 +29,7 @@ let levelCompleteScreen = document.querySelector("#level_complete");
 
 //Game over skærm og elementer
 let gameOverScreen = document.querySelector("#game_over");
-let replayButton = document.querySelector("#try_again_button");
+let replayButton = document.querySelector("#replay_button");
 
 
 //Lyde
