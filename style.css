@@ -44,25 +44,249 @@ body {
 
 /*-------- GAME BACKGROUND ---------*/
 
+#game_background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: url(pics/game_scene.svg);
+  background-size: cover;
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+}
+
 /*-------- GAME ELEMENTS ---------*/
 
-/*-------- FOREGROUND ---------*/
+#game_elements {
+  height:100%;
+  width:100%;
+  position: absolute;
+}
 
 /*-------- GAME UI ---------*/
 
-/*--- SCORE BOARD -----*/
+#game_ui {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
 
-/*--- ENERGY BOARD -----*/
+/* --- SCORE BOARD ----- */
+
+#score_button {
+  position: absolute;
+  bottom: 1vw;
+  right: 1vw;
+  height: 10vw;
+  width: 20vw;
+  z-index: 1;
+  background-image: url(pics/point_counter.svg);
+  background-size: 100%;
+}
+
+
+#score_text {
+  position: absolute;
+  bottom: 1vw;
+  right: 6vw;
+  z-index: 1;
+  font-family: 'vag';
+  font-size: 5rem;
+  color: white;
+}
 
 /*--- TIME BOARD -----*/
 
+#time_board {
+  position: absolute;
+  top: 0vw;
+  left: 0vw;
+  font-family: 'vag';
+  font-size: 5rem;
+}
 /*-------- INTRODUCTION ---------*/
+#introduction {
+
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: url(pics/introduction.svg);
+  background-size: cover;
+  position: absolute;
+  user-select: none;
+  pointer-events: none;
+}
 
 /*-------- START ---------*/
-
+#start {
+  background-image: url(pics/start_skaerm.svg);
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  position: absolute;
+}
 /*-------- GAME OVER ---------*/
+#gameOver {
+  background-image: url(pics/taber_skaerm.svg);
+  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
 
 /*-------- LEVEL COMPLETE ---------*/
+#levelComplete {
+  background-image: url(pics/vinder_skaerm.svg);
+  background-size: cover;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+
+/*-------------------- KNAPPER ----------------*/
+/*
+#replay_button {
+  background-image: url(pics/replay_button.svg);
+  background-size: cover;
+  width: 20vw;
+  height: 10vw;
+  top: 6vw;
+  right: 10vw;
+  z-index: 1;
+  position: absolute;
+  cursor: pointer;
+
+}
+
+#point_counter {
+  background-image: url(pics/point_counter.svg);
+  background-size: cover;
+  width: 20vw;
+  height: 10vw;
+  bottom: 6vw;
+  left: 40vw;
+  z-index: 1;
+  position: absolute;
+  cursor: pointer;
+
+}
+
+#anmeld_button {
+  background-image: url(pics/anmeld_button.svg);
+  background-size: cover;
+  width: 20vw;
+  height: 10vw;
+  bottom: 6vw;
+  left: 40vw;
+  z-index: 1;
+  position: absolute;
+  cursor: pointer;
+
+}
+
+#del_button {
+    background-image: url(pics/del_button.svg);
+    background-size: cover;
+    width: 20vw;
+    height: 10vw;
+    bottom: 6vw;
+    left: 40vw;
+    z-index: 1;
+    position: absolute;
+    cursor: pointer;
+} */
+
+#start_button {
+    background-image: url(pics/start_button.svg);
+    background-size: cover;
+    width: 20vw;
+    height: 10vw;
+    bottom: 8vw;
+    left: 25vw;
+    z-index: 1;
+    position: absolute;
+    cursor: pointer;
+}
+
+
+
+
+
+/*-------------------- POLAROID ----------------*/
+
+#nude #animal {
+
+    height: 62.21837088388215vw;
+    width:  26.27349823321555vw;
+
+}
+
+
+
+
+
+
 
 /*-------------------- ANIMATIONS ----------------*/
 
+
+.dissappear {
+  animation-name: dissappear_kf;
+  animation-duration: .5s;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(.59, -0.56, .77, 1.34);
+  animation-fill-mode: forwards;
+}
+
+@keyframes dissappear_kf {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(0);
+  }
+}
+
+
+.puls {
+  animation-name: puls;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-timing-function: linear;
+}
+
+@keyframes puls {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation-name: pulse;
+  animation-duration: 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translateY(0vw);
+  }
+
+  100% {
+    transform: translateY(-4vw);
+  }
+
+}

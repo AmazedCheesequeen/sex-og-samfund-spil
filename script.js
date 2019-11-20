@@ -90,7 +90,7 @@ function intro () {
 
     //Når skærmen er faded ud vis introduktion
 
-    startButton.addEventListener("click", hideIntro);
+    agree_button.addEventListener("click", hideIntro);
 }
 
 
@@ -369,8 +369,3 @@ function tryAgain () {
 
     startScreen ();
 }
-
-
-
-
-
