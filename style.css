@@ -86,7 +86,7 @@ p
   right: 1vw;
   height: 10vw;
   width: 20vw;
-  z-index: 1;
+  /*z-index: 1;*/
   background-image: url(pics/point_counter.svg);
   background-size: 100%;
 }
@@ -96,7 +96,7 @@ p
   position: absolute;
   bottom: 1vw;
   right: 7vw;
-  z-index: 1;
+  /*z-index: 1;*/
   font-family: 'vag';
   font-size: 7rem;
   color: white;
@@ -122,6 +122,10 @@ p
   position: absolute;
   user-select: none;
   pointer-events: none;
+
+    z-index: 1;
+
+    display: none;
 }
 
 /*-------- START ---------*/
@@ -131,6 +135,8 @@ p
   width: 100%;
   background-size: cover;
   position: absolute;
+
+    display: none;
 }
 /*-------- GAME OVER ---------*/
 #gameOver {
@@ -139,6 +145,8 @@ p
   position: absolute;
   height: 100%;
   width: 100%;
+
+    display: none;
 }
 
 /*-------- LEVEL COMPLETE ---------*/
@@ -148,11 +156,13 @@ p
   position: absolute;
   height: 100%;
   width: 100%;
+
+    display: none;
 }
 
 
 /*-------------------- KNAPPER ----------------*/
-/*
+
 #replay_button {
   background-image: url(pics/replay_button.svg);
   background-size: cover;
@@ -163,6 +173,8 @@ p
   z-index: 1;
   position: absolute;
   cursor: pointer;
+
+    display: none;
 
 }
 
@@ -202,7 +214,7 @@ p
     z-index: 1;
     position: absolute;
     cursor: pointer;
-} */
+}
 
 #start_button {
     background-image: url(pics/start_button.svg);
@@ -214,6 +226,20 @@ p
     z-index: 1;
     position: absolute;
     cursor: pointer;
+}
+
+#agree_button {
+    background-image: url(pics/agree_button.svg);
+    background-size: cover;
+    width: 20vw;
+    height: 10vw;
+    bottom: 8vw;
+    left: 25vw;
+    z-index: 1;
+    position: absolute;
+    cursor: pointer;
+
+    display: none;
 }
 
 

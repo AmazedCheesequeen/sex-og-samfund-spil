@@ -6,7 +6,7 @@ let startButton = document.querySelector("#start_button");
 
 //Intro skærm og elementer
 let introduction = document.querySelector("#introduction");
-let introButton = document.querySelector("#intro_button");
+let introButton = document.querySelector("#agree_button");
 
 // Game elementer
 let currentImage;
@@ -123,7 +123,7 @@ function chooseGoodOrBad () {
          anmeldButton.classList.remove("scale");
 
         currentImage.classList.remove("scroll_out");
-        currentImage.removeEventListener("animationend",chooseGoodOrBad);
+        currentImage.removeEventListener("animationend", chooseGoodOrBad);
     }
 
     // Laver if sætning, hvor der er 50% chance for nude eller dyrebillede
