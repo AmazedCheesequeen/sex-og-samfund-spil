@@ -279,9 +279,7 @@ function timer () {
 
     if (time < 0) {
 
-        if() {
             levelComplete()
-        }
 
     }
 
