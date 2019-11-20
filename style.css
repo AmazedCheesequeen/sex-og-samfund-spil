@@ -22,6 +22,12 @@ body {
 
 }
 
+h1
+
+h2
+
+p
+
 /*-------------------- SCREEN ----------------*/
 
 #screen {
@@ -34,8 +40,9 @@ body {
 /*-------------------- GAME ----------------*/
 
 #game {
-
     background-color: #6fd9e2;
+    background-image: url(pics/game_scene.svg);
+
     background-size: cover;
     width: 100%;
     height: 100%;
@@ -88,10 +95,10 @@ body {
 #score_text {
   position: absolute;
   bottom: 1vw;
-  right: 6vw;
+  right: 7vw;
   z-index: 1;
   font-family: 'vag';
-  font-size: 5rem;
+  font-size: 7rem;
   color: white;
 }
 
