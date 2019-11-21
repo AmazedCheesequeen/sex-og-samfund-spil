@@ -123,7 +123,6 @@ p {
   width: 100vw;
   height: 56.25vw;
   position: relative;
-  z-Index: 0;
 }
 
 /*-------------------- GAME ----------------*/
@@ -134,8 +133,6 @@ p {
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 1;
-  display: none;
 }
 
 /*-------- GAME BACKGROUND ---------*/
@@ -270,10 +267,8 @@ p {
   height: 10vw;
   bottom: 6vw;
   right: 15vw;
-  z-index: 2;
   position: absolute;
   cursor: pointer;
-  display: none;
 }
 
 #del_button {
@@ -283,10 +278,8 @@ p {
   height: 10vw;
   bottom: 6vw;
   left: 15vw;
-  z-index: 2;
   position: absolute;
   cursor: pointer;
-  display: none;
 }
 
 #start_button {
@@ -296,7 +289,7 @@ p {
   height: 10vw;
   bottom: 8vw;
   left: 25vw;
-  z-index: 2;
+  z-index: 1;
   position: absolute;
   cursor: pointer;
   display: none;
@@ -316,166 +309,175 @@ p {
 }
 
 /*-------------------- POLAROID; ANIMAL----------------*/
+
+#game_elements{
+
+    background-size: 100%;
+    width: 20vw;
+    height: 19.30vw;
+
+    top: 20vw;
+    left: 40vw;
+
+}
+
 #ani_1 {
-  background-image: url(pics/ani_1.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/ani1.svg);
+
+    display: none;
+
+
 }
 
 #ani_2 {
-  background-image: url(pics/ani_2.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/ani2.svg);
+
+
+    display: none;
 }
 
 #ani_3 {
-  background-image: url(pics/ani_3.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/ani3.svg);
+
+
+
+    display: none;
 }
 
 #ani_4 {
-  background-image: url(pics/ani_4.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/ani4.svg);
+
+
+
+    display: none;
 }
 
 #ani_5 {
-  background-image: url(pics/ani_5.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/ani5.svg);
+
+    display: none;
 }
 
 #ani_6 {
-  background-image: url(pics/ani_6.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/ani6.svg);
+
+
+    display: none;
 }
 
 #ani_7 {
-  background-image: url(pics/ani_7.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/ani7.svg);
+
+
+    display: none;
 }
 
 #ani_8 {
-  background-image: url(pics/ani_8.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/ani8.svg);
+
+    display: none;
 }
 
 #ani_9 {
-  background-image: url(pics/ani_9.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/ani9.svg);
+
+    display: none;
 }
 
 #ani_10 {
-  background-image: url(pics/ani_10.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/ani10.svg);
+
+
+    display: none;
 }
 
 #ani_11 {
-  background-image: url(pics/ani_11.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/ani11.svg);
+
+
+    display: none;
 }
 
 /*-------------------- POLAROID: NUDES ----------------*/
 #skin_1 {
-  background-image: url(pics/skin_1.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/skin1.svg);
+
+
+    display: none;
 }
 
 #skin_2 {
-  background-image: url(pics/skin_2.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/skin2.svg);
+
+
+
+    display: none;
 }
 
 #skin_3 {
-  background-image: url(pics/skin_3.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/skin3.svg);
+
+    display: none;
 }
 
 #skin_4 {
-  background-image: url(pics/skin_4.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/skin4.svg);
+
+    display: none;
 }
 
 #skin_5 {
-  background-image: url(pics/skin_5.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/skin5.svg);
+
+
+    display: none;
 }
 
 #skin_6 {
-  background-image: url(pics/skin_6.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/skin6.svg);
+
+
+    display: none;
 }
 
 #skin_7 {
-  background-image: url(pics/skin_7.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/skin7.svg);
+
+
+    display: none;
 }
 
 #skin_8 {
-  background-image: url(pics/skin_8.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/skin8.svg);
+
+
+    display: none;
 }
 
 #skin_9 {
-  background-image: url(pics/skin_9.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/skin9.svg);
+
+
+    display: none;
 }
 
 #skin_10 {
-  background-image: url(pics/skin_10.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/skin10.svg);
+
+    display: none;
 }
 
 #skin_11 {
-  background-image: url(pics/skin_11.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/skin11.svg);
+
+    display: none;
 }
 
 #skin_12 {
-  background-image: url(pics/skin_12.svg);
-  background-size: 100%;
-  height: 62.21837088388215vw;
-  width: 26.27349823321555vw;
+  background-image: url(pics/skin12.svg);
+
+
+    display: none;
 }
 
 /*-------------------- ANIMATIONS ----------------*/

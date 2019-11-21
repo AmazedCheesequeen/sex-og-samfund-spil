@@ -178,7 +178,7 @@ function startGame() {
 
 
   pointLabel.innerHTML = "" + point + "";
-  time.innerHTML = "" + time + " sek tilbage";
+  document.querySelector("#time_board").innerHTML  = "" + time + " sek tilbage";
 
   //Sæt tiden til at gå ned 1 sek af gangen
   gameTime = setInterval(timer, 1000);
@@ -278,7 +278,7 @@ function timer() {
   //Hvis tiden er over 0 bliv ved med at tælle ned
   else {
 
-    time.innerHTML = "" + time + " sek tilbage";
+   document.querySelector("#time_board").innerHTML = "" + time + " sek tilbage";
 
   }
 }
