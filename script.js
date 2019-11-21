@@ -105,7 +105,6 @@ function hideIntro() {
   introButton.removeEventListener("click", hideIntro);
 
 
-
   //Start ud animation
 
   introduction.classList.add("disappear");
@@ -114,7 +113,7 @@ function hideIntro() {
   //Når skærmen er væk vis selve spillet
 
   start.addEventListener("animationend", startGame);
-
+}
   function chooseGoodOrBad() {
 
     //Fjerner animation og eventlistener, hvis det ikke er første gang funktionen er i brug
@@ -157,10 +156,6 @@ function hideIntro() {
       currentImage = document.querySelector("#skin_" + randomNude);
 
     }
-
-  }
-
-
 }
 
 function startGame() {
