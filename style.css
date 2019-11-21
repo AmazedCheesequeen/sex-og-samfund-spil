@@ -28,21 +28,21 @@ body {
 
 h1 {
     font-family: "vag-rundschrift-d", sans-serif;
-    font-size: 4vw;
+    font-size: 3vw;
     color: white;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 h2 {
     font-family: "vag-rundschrift-d", sans-serif;
-    font-size: 2.5vw;
+    font-size: 1.5vw;
     color: white;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 p {
     font-family: "vag-rundschrift-d", sans-serif;
-    font-size: 2vw;
+    font-size: 1vw;
     color: white;
     font-weight: lighter;
 }
@@ -63,8 +63,8 @@ p {
 #go_txt_h {
     width: 80vw;
     height: 12vw;
-    top: 6vw;
-    left: 15vw;
+    top: 14vw;
+    left: 26vw;
     z-index: 1;
     display: block;
     position: absolute;
@@ -75,8 +75,8 @@ p {
 #go_txt_h2 {
     width: 60vw;
     height: 12vw;
-    top: 12vw;
-    left: 15vw;
+    top: 19vw;
+    left: 30vw;
     z-index: 1;
     display: block;
     position: absolute;
@@ -85,7 +85,7 @@ p {
 
 #go_txt_p_left {
     width: 40vw;
-    height: 15vw;
+    height: 5vw;
     bottom: 2vw;
     left: 3vw;
     z-index: 1;
@@ -95,9 +95,9 @@ p {
 }
 
 #go_txt_p_right {
-    width: 40vw;
+    width: 30vw;
     height: 5vw;
-    bottom: 5vw;
+    bottom: 1vw;
     right: 3vw;
     z-index: 1;
     position: absolute;
@@ -194,11 +194,11 @@ p {
 }
 
 a:hover {
-    color: pink;
+    color: #eaa77d;
 }
 
 a {
-    color: white;
+    color: #eaa77d;
 }
 
 /* --- SCORE BOARD ----- */
@@ -208,7 +208,6 @@ a {
     right: 1vw;
     height: 10vw;
     width: 20vw;
-    /*z-index: 1;*/
     background-image: url(pics/point_counter.svg);
     background-size: 100%;
 }
@@ -230,7 +229,7 @@ a {
     left: 2vw;
     font-family: "vag-rundschrift-d", sans-serif;
     font-weight: 100;
-    font-size: 5.5vw;
+    font-size: 2.5vw;
     color: white;
     user-select: none;
 }
@@ -271,7 +270,6 @@ a {
     position: absolute;
     width: 100%;
     height: 100%;
-    flex-wrap: nowrap;
     display: none;
 }
 
@@ -318,7 +316,7 @@ a {
     width: 20vw;
     height: 10vw;
     bottom: 25vw;
-    right: 15vw;
+    right: 12vw;
     position: absolute;
     cursor: pointer;
 }
