@@ -90,9 +90,7 @@ function intro() {
   backgroundMusic.load();
   backgroundMusic.play();
 
-  //Kør chooseGoodOrBad funktion
 
-  chooseGoodOrBad();
 
   //Når skærmen er faded ud vis introduktion
 
@@ -109,6 +107,10 @@ function hideIntro() {
 
   introButton.classList.remove("pulse");
   introButton.removeEventListener("click", hideIntro);
+
+    //Kør chooseGoodOrBad funktion
+
+  chooseGoodOrBad();
 
 
   //Start ud animation
