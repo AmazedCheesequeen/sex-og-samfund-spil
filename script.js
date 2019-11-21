@@ -48,6 +48,8 @@ window.addEventListener("load", startScreen);
 
 function startScreen() {
 
+    console.log("startScreen");
+
   //Vis startskærm og knap
 
   start.style.display = "block";
@@ -65,6 +67,8 @@ function startScreen() {
 }
 
 function intro() {
+
+     console.log("intro");
 
 
   //Fjern knap, animation og eventlistener
@@ -271,7 +275,7 @@ function timer() {
 
   if (time < 0) {
 
-    levelComplete()
+    levelComplete();
 
   }
 
@@ -327,7 +331,7 @@ function levelComplete() {
 
   //Vis skærm og knap
 
-  levelComplete.style.display = "block";
+  levelCompleteScreen.style.display = "block";
   replayButton.style.display = "block";
 
   //Stop baggrundsmusik
