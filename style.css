@@ -150,9 +150,10 @@ p {
 
 /*-------- GAME ELEMENTS ---------*/
 #game_elements {
-  height: 100%;
-  width: 100%;
+
   position: absolute;
+    top: 16vw;
+    left: 41vw;
 }
 
 /*-------- GAME UI ---------*/
@@ -311,21 +312,14 @@ p {
 
 /*-------------------- POLAROID; ANIMAL----------------*/
 
-#game_elements{
-
-    background-size: 100%;
-    width: 20vw;
-    height: 19.30vw;
-
-    top: 20vw;
-    left: 40vw;
-
-    z-index: 1;
-
-}
 
 #ani_1 {
   background-image: url(pics/ani1.svg);
+
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
 
     display: none;
 
@@ -335,12 +329,22 @@ p {
 #ani_2 {
   background-image: url(pics/ani2.svg);
 
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
+
 
     display: none;
 }
 
 #ani_3 {
   background-image: url(pics/ani3.svg);
+
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
 
 
 
@@ -350,6 +354,10 @@ p {
 #ani_4 {
   background-image: url(pics/ani4.svg);
 
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
 
 
     display: none;
@@ -358,11 +366,21 @@ p {
 #ani_5 {
   background-image: url(pics/ani5.svg);
 
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
+
     display: none;
 }
 
 #ani_6 {
   background-image: url(pics/ani6.svg);
+
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
 
 
     display: none;
@@ -371,6 +389,11 @@ p {
 #ani_7 {
   background-image: url(pics/ani7.svg);
 
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
+
 
     display: none;
 }
@@ -378,11 +401,21 @@ p {
 #ani_8 {
   background-image: url(pics/ani8.svg);
 
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
+
     display: none;
 }
 
 #ani_9 {
   background-image: url(pics/ani9.svg);
+
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
 
     display: none;
 }
@@ -390,12 +423,22 @@ p {
 #ani_10 {
   background-image: url(pics/ani10.svg);
 
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
+
 
     display: none;
 }
 
 #ani_11 {
   background-image: url(pics/ani11.svg);
+
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
 
 
     display: none;
@@ -405,6 +448,11 @@ p {
 #skin_1 {
   background-image: url(pics/skin1.svg);
 
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
+
 
     display: none;
 }
@@ -412,6 +460,10 @@ p {
 #skin_2 {
   background-image: url(pics/skin2.svg);
 
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
 
 
     display: none;
@@ -420,17 +472,32 @@ p {
 #skin_3 {
   background-image: url(pics/skin3.svg);
 
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
+
     display: none;
 }
 
 #skin_4 {
   background-image: url(pics/skin4.svg);
 
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
+
     display: none;
 }
 
 #skin_5 {
   background-image: url(pics/skin5.svg);
+
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
 
 
     display: none;
@@ -439,6 +506,11 @@ p {
 #skin_6 {
   background-image: url(pics/skin6.svg);
 
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
+
 
     display: none;
 }
@@ -446,12 +518,21 @@ p {
 #skin_7 {
   background-image: url(pics/skin7.svg);
 
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
+
 
     display: none;
 }
 
 #skin_8 {
   background-image: url(pics/skin8.svg);
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
 
 
     display: none;
@@ -460,6 +541,11 @@ p {
 #skin_9 {
   background-image: url(pics/skin9.svg);
 
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
+
 
     display: none;
 }
@@ -467,17 +553,32 @@ p {
 #skin_10 {
   background-image: url(pics/skin10.svg);
 
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
+
     display: none;
 }
 
 #skin_11 {
   background-image: url(pics/skin11.svg);
 
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
+
     display: none;
 }
 
 #skin_12 {
   background-image: url(pics/skin12.svg);
+
+    width: 20vw;
+    height: 19.30vw;
+
+    background-size: 100%;
 
 
     display: none;

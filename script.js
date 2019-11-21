@@ -103,6 +103,8 @@ function intro() {
 
 function hideIntro() {
 
+    console.log("hideIntro");
+
   //Fjern animation og eventlistener
 
   introButton.classList.remove("pulse");
@@ -120,6 +122,8 @@ function hideIntro() {
 }
 
   function chooseGoodOrBad() {
+
+      console.log("chooseGoodOrBad");
 
     //Fjerner animation og eventlistener, hvis det ikke er første gang funktionen er i brug
 
@@ -165,6 +169,8 @@ function hideIntro() {
 
 function startGame() {
 
+    console.log("startGame");
+
   //Vis ikke intro og start skærm og knap
 
   introduction.style.display = "none";
@@ -197,6 +203,8 @@ function startGame() {
 }
 
 function clickDel() {
+
+    console.log("clickDel");
 
   //Fjern eventlistener og animation
   delButton.removeEventListener("click", clickDel);
@@ -231,6 +239,8 @@ function clickDel() {
 }
 
 function clickAnmeld() {
+
+    console.log("clickAnmeld");
 
   //Fjern eventlistener og animation
   delButton.removeEventListener("click", clickAnmeld);
@@ -267,6 +277,8 @@ function clickAnmeld() {
 
 function timer() {
 
+    console.log("timer");
+
   // Lad tiden gå ned 1 sek af gangen
 
   time--;
@@ -288,6 +300,8 @@ function timer() {
 }
 
 function gameOver() {
+
+    console.log("gameOver");
 
   //Fjern animationer og eventlistener
   anmeldButton.removeEventListener("click", clickAnmeld);
@@ -321,6 +335,8 @@ function gameOver() {
 
 function levelComplete() {
 
+    console.log("levelComplete");
+
   //Fjern animationer og eventlistener
   anmeldButton.removeEventListener("click", clickAnmeld);
   delButton.removeEventListener("click", clickDel);
@@ -350,6 +366,8 @@ function levelComplete() {
 }
 
 function tryAgain() {
+
+    console.log("tryAgain");
 
   //Fjern knap og skærme
   gameOverScreen.style.display = "none";
