@@ -114,6 +114,7 @@ function hideIntro() {
 
   start.addEventListener("animationend", startGame);
 }
+
   function chooseGoodOrBad() {
 
     //Fjerner animation og eventlistener, hvis det ikke er første gang funktionen er i brug
@@ -176,7 +177,7 @@ function startGame() {
   time = 30;
 
 
-  pointLabel.innerHTML = "" + point + " point";
+  pointLabel.innerHTML = "" + point + "";
   time.innerHTML = "" + time + " sek tilbage";
 
   //Sæt tiden til at gå ned 1 sek af gangen
@@ -215,7 +216,7 @@ function clickDel() {
     gameOver();
   } else {
     point++
-    pointLabel.innerHTML = "" + point + " point";
+    pointLabel.innerHTML = "" + point + "";
 
     currentImage.addEventListener("animationend", chooseGoodOrBad);
   }
@@ -247,12 +248,12 @@ function clickAnmeld() {
   if (currentImage.id.includes("skin")) {
 
     point++
-    pointLabel.innerHTML = "" + point + " point";
+    pointLabel.innerHTML = "" + point + "";
 
     currentImage.addEventListener("animationend", chooseGoodOrBad);
   } else {
     point--
-    pointLabel.innerHTML = "" + point + " point";
+    pointLabel.innerHTML = "" + point + "";
 
     currentImage.addEventListener("animationend", chooseGoodOrBad);
   }
@@ -289,6 +290,9 @@ function gameOver() {
   delButton.removeEventListener("click", clickDel);
   currentImage.classList.remove("scroll_out");
 
+    //Stop tid
+    clearInterval(gameTime);
+
   //Vis skærm og knap
 
   gameOverScreen.style.display = "block";
@@ -317,6 +321,9 @@ function levelComplete() {
   anmeldButton.removeEventListener("click", clickAnmeld);
   delButton.removeEventListener("click", clickDel);
   currentImage.classList.remove("scroll_out");
+
+    //Stop tid
+    clearInterval(gameTime);
 
   //Vis skærm og knap
 
