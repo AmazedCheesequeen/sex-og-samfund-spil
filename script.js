@@ -88,6 +88,7 @@ function intro() {
     //Load og start musik
 
     backgroundMusic.load();
+    backgroundMusic.volume = 0.3;
     backgroundMusic.play();
 
 
