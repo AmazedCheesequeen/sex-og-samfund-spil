@@ -23,29 +23,26 @@ body {
 @font-face {
   font-family: "vag-rundschrift-d";
   src: url("https://use.typekit.net/af/121f08/00000000000000000001793a/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/121f08/00000000000000000001793a/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/121f08/00000000000000000001793a/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
-
-
   font-style: normal;
-  font-weight: 400;
 }
 
 h1 {
   font-family: "vag-rundschrift-d", sans-serif;
-  font-size: 4rem;
+  font-size: 2rem;
   color: white;
-  font-weight: lighter;
+  font-weight: bold;
 }
 
 h2 {
   font-family: "vag-rundschrift-d", sans-serif;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
-  font-weight: lighter;
+  font-weight: bold;
 }
 
 p {
   font-family: "vag-rundschrift-d", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: white;
   font-weight: lighter;
 }
@@ -60,25 +57,28 @@ p {
   position: absolute;
   user-select: none;
   display: none;
+  height:100%;
+  width:100%;
 }
 
 /*-------------------- Tekst GameOver ----------------*/
 #go_txt_h {
-  width: 40vw;
-  height: 10vw;
-  top: 10vw;
-  left: 35vw;
+  width: 50vw;
+  height: 12vw;
+  top: 13vw;
+  left: 29vw;
   z-index: 1;
+  display: block;
   position: absolute;
   user-select: none;
 
 }
 
 #go_txt_p_left {
-  width: 20vw;
+  width: 40vw;
   height: 10vw;
-  bottom: 5vw;
-  left: 5vw;
+  bottom: 2vw;
+  left: 3vw;
   z-index: 1;
   position: absolute;
   user-select: none;
@@ -88,8 +88,8 @@ p {
 #go_txt_p_right {
   width: 40vw;
   height: 5vw;
-  bottom: 5vw;
-  right: 5vw;
+  bottom: 2vw;
+  right: 3vw;
   z-index: 1;
   position: absolute;
   user-select: none;
@@ -250,36 +250,32 @@ z-index: 2;
 /*-------- GAME OVER ---------*/
 #gameover {
   background-image: url(pics/taber_skaerm.svg);
-
   background-size: cover;
   position: absolute;
   width: 100%;
   height: 100%;
-
-
+  flex-wrap: nowrap;
   display: none;
 }
 
 /*-------- LEVEL COMPLETE ---------*/
 #levelcomplete {
   background-image: url(pics/vinder_skaerm.svg);
-
   background-size: cover;
   position: absolute;
   height: 100%;
   width: 100%;
-
   display: none;
 }
 
 /*-------------------- KNAPPER ----------------*/
 #replay_button {
   background-image: url(pics/replay_button.svg);
-  background-size: cover;
-  width: 20vw;
-  height: 10vw;
-  top: 6vw;
-  right: 10vw;
+  background-size: 100%;
+  width: 12vw;
+  height: 6vw;
+  top: 2vw;
+  right: 2vw;
   z-index: 2;
   position: absolute;
   cursor: pointer;
