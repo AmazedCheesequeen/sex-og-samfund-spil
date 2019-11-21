@@ -1,4 +1,4 @@
-//Variabler
+///Variabler
 
 //Start skærm og elementer
 let start = document.querySelector("#start");
@@ -7,6 +7,7 @@ let startButton = document.querySelector("#start_button");
 //Intro skærm og elementer
 let introduction = document.querySelector("#introduction");
 let introButton = document.querySelector("#agree_button");
+let introtext = document.querySelector("#intro_text");
 
 // Game elementer
 let currentImage;
@@ -45,325 +46,319 @@ let delSound = document.querySelector("#click_del_sound");
 
 window.addEventListener("load", startScreen);
 
-function startScreen () {
+function startScreen() {
 
-    //Vis startskærm og knap
+  //Vis startskærm og knap
 
-    start.style.display="block";
+  start.style.display = "block";
 
-    startButton.style.display="block";
+  startButton.style.display = "block";
 
-    //Giv knap en pulse animation
+  //Giv knap en pulse animation
 
-    startButton.classList.add("pulse");
+  startButton.classList.add("pulse");
 
-    //Når man klikker på knap sendes man videre til intro skærm
+  //Når man klikker på knap sendes man videre til intro skærm
 
-    startButton.addEventListener("click", intro);
+  startButton.addEventListener("click", intro);
 
 }
 
-function intro () {
+function intro() {
 
 
-    //Fjern knap, animation og eventlistener
+  //Fjern knap, animation og eventlistener
 
-    startButton.removeEventListener("click",intro);
-    startButton.style.display="none";
-    startButton.classList.remove("pulse");
+  startButton.removeEventListener("click", intro);
+  startButton.style.display = "none";
+  startButton.classList.remove("pulse");
 
-    //Vis intro
-    introduction.display="block";
-    introButton.display="block";
+  //Vis intro
+  introduction.style.display = "block";
+  introButton.style.display = "block";
+  introtext.style.display = "block";
 
-    //Tilføj animation
-    introButton.classList.add("pulse");
+  //Tilføj animation
+  introButton.classList.add("pulse");
 
-    //Load og start musik
+  //Load og start musik
 
-    backgroundMusic.load ();
-    backgroundMusic.play ();
+  backgroundMusic.load();
+  backgroundMusic.play();
 
-    //Kør chooseGoodOrBad funktion
+  //Kør chooseGoodOrBad funktion
 
-    chooseGoodOrBad ();
+  chooseGoodOrBad();
 
-    //Når skærmen er faded ud vis introduktion
+  //Når skærmen er faded ud vis introduktion
 
-    agree_button.addEventListener("click", hideIntro);
+  agree_button.addEventListener("click", hideIntro);
 }
 
 
 
-function hideIntro () {
+function hideIntro() {
 
-    //Fjern animation og eventlistener
+  //Fjern animation og eventlistener
 
-    introtButton.classList.remove("pulse");
-    introButton.removeEventListener("click",hideIntro);
+  introButton.classList.remove("pulse");
+  introButton.removeEventListener("click", hideIntro);
 
 
 
-    //Start ud animation
+  //Start ud animation
 
-    introduction.classList.add("disappear");
-    start.classList.add("disappear");
+  introduction.classList.add("disappear");
+  start.classList.add("disappear");
 
-    //Når skærmen er væk vis selve spillet
+  //Når skærmen er væk vis selve spillet
 
-    start.addEventListener("animationend", startGame);
+  start.addEventListener("animationend", startGame);
 
-function chooseGoodOrBad () {
+  function chooseGoodOrBad() {
 
     //Fjerner animation og eventlistener, hvis det ikke er første gang funktionen er i brug
 
-    if(currentImage != null){
+    if (currentImage != null) {
 
-        delButton.classList.remove("scale");
-         anmeldButton.classList.remove("scale");
+      delButton.classList.remove("scale");
+      anmeldButton.classList.remove("scale");
 
-        currentImage.classList.remove("scroll_out");
-        currentImage.removeEventListener("animationend", chooseGoodOrBad);
+      currentImage.classList.remove("scroll_out");
+      currentImage.removeEventListener("animationend", chooseGoodOrBad);
     }
 
     // Laver if sætning, hvor der er 50% chance for nude eller dyrebillede
 
-    if(Math.random () >0.5) {
+    if (Math.random() > 0.5) {
 
-        //Tilfældigt hvilket dyr vises og samme dyr får en animation på
+      //Tilfældigt hvilket dyr vises og samme dyr får en animation på
 
-        let randomAnimal = Math.floor(Math.random()*Math.floor(11))+1;
+      let randomAnimal = Math.floor(Math.random() * Math.floor(11)) + 1;
 
-        document.querySelector("#ani_"+randomAnimal).style.display="block";
-        document.querySelector("#ani_"+randomAnimal).classList.add("scroll_in");
+      document.querySelector("#ani_" + randomAnimal).style.display = "block";
+      document.querySelector("#ani_" + randomAnimal).classList.add("scroll_in");
 
-        //Lader variablen være det viste billede
+      //Lader variablen være det viste billede
 
-        currentImage = document.querySelector("#ani_"+randomAnimal);
+      currentImage = document.querySelector("#ani_" + randomAnimal);
 
-    }
+    } else {
 
-    else {
+      //Viser tilfældig nude og samme nude får en animation på
 
-        //Viser tilfældig nude og samme nude får en animation på
+      let randomNude = Math.floor(Math.random() * Math.floor(12)) + 1;
 
-        let randomNude = Math.floor(Math.random()*Math.floor(12))+1;
+      document.querySelector("#skin_" + randomNude).style.display = "block";
+      document.querySelector("#skin_" + randomNude).classList.add("scroll_in");
 
-        document.querySelector("#skin_"+randomNude).style.display="block";
-        document.querySelector("#skin_"+randomNude).classList.add("scroll_in");
+      //Lader variablen være det viste billede
 
-        //Lader variablen være det viste billede
-
-        currentImage = document.querySelector("#skin_"+randomNude);
+      currentImage = document.querySelector("#skin_" + randomNude);
 
     }
 
-}
-
-
-}
-
-function startGame () {
-
-     //Vis ikke intro og start skærm og knap
-
-    introduction.style.display="none";
-    introButton.style.display="none";
-    start.style.display="none";
-
-    //Fjern anímationer og eventlistener
-    introduction.classList.remove("disappear");
-    start.classList.remove("disappear");
-    start.removeEventListener("animationend", startGame);
-
-    //Nulstil tid og point
-    point = 0;
-    time = 30;
-
-
-    pointLabel.innerHTML = ""+ point +" point";
-    time.innerHTML = ""+ time +" sek tilbage";
-
-    //Sæt tiden til at gå ned 1 sek af gangen
-    gameTime =  setInterval(timer,1000);
-
-
-    //Add eventlistener
-
-    anmeldButton.addEventListener("click", clickAnmeld);
-    delButton.addEventListener("click", clickDel);
+  }
 
 
 }
 
-function clickDel () {
+function startGame() {
 
-    //Fjern eventlistener og animation
-    delButton.removeEventListener("click", clickDel);
+  //Vis ikke intro og start skærm og knap
 
-    currentImage.classList.remove("scroll_in");
+  introduction.style.display = "none";
+  introButton.style.display = "none";
+  start.style.display = "none";
 
-    //Afspil lyd
-    delSound.load();
-    delSound.play();
+  //Fjern anímationer og eventlistener
+  introduction.classList.remove("disappear");
+  start.classList.remove("disappear");
+  start.removeEventListener("animationend", startGame);
 
-    //Tilføj animation på knap
-
-    delButton.classList.add("scale");
-
-    //Tilføj forsvind animation til billede
-    currentImage.classList.add("scroll_out");
+  //Nulstil tid og point
+  point = 0;
+  time = 30;
 
 
-    if(currentImage.id.includes("skin")){
+  pointLabel.innerHTML = "" + point + " point";
+  time.innerHTML = "" + time + " sek tilbage";
 
-        gameOver ();
-    }
+  //Sæt tiden til at gå ned 1 sek af gangen
+  gameTime = setInterval(timer, 1000);
 
-    else {
-        point++
-        pointLabel.innerHTML = ""+ point +" point";
 
-        currentImage.addEventListener("animationend",chooseGoodOrBad);
-    }
+  //Add eventlistener
+
+  anmeldButton.addEventListener("click", clickAnmeld);
+  delButton.addEventListener("click", clickDel);
+
+
+}
+
+function clickDel() {
+
+  //Fjern eventlistener og animation
+  delButton.removeEventListener("click", clickDel);
+
+  currentImage.classList.remove("scroll_in");
+
+  //Afspil lyd
+  delSound.load();
+  delSound.play();
+
+  //Tilføj animation på knap
+
+  delButton.classList.add("scale");
+
+  //Tilføj forsvind animation til billede
+  currentImage.classList.add("scroll_out");
+
+
+  if (currentImage.id.includes("skin")) {
+
+    gameOver();
+  } else {
+    point++
+    pointLabel.innerHTML = "" + point + " point";
+
+    currentImage.addEventListener("animationend", chooseGoodOrBad);
+  }
 
 
 
 
 }
 
-function clickAnmeld () {
+function clickAnmeld() {
 
-    //Fjern eventlistener og animation
-    delButton.removeEventListener("click" , clickAnmeld);
+  //Fjern eventlistener og animation
+  delButton.removeEventListener("click", clickAnmeld);
 
-    currentImage.classList.remove("scroll_in");
+  currentImage.classList.remove("scroll_in");
 
-    //Afspil lyd
-    AnmeldSound.load();
-    AnmeldSound.play();
+  //Afspil lyd
+  AnmeldSound.load();
+  AnmeldSound.play();
 
-     //Tilføj animation på knap
-    anmeldButton.classList.add("scale");
-
-
-    //Tilføj forsvind animation til billede
-    currentImage.classList.add("scroll_out");
+  //Tilføj animation på knap
+  anmeldButton.classList.add("scale");
 
 
-    if(currentImage.id.includes("skin")){
+  //Tilføj forsvind animation til billede
+  currentImage.classList.add("scroll_out");
 
-        point++
-        pointLabel.innerHTML = ""+ point +" point";
 
-        currentImage.addEventListener("animationend",chooseGoodOrBad);
-    }
+  if (currentImage.id.includes("skin")) {
 
-    else {
-        point--
-        pointLabel.innerHTML = ""+ point +" point";
+    point++
+    pointLabel.innerHTML = "" + point + " point";
 
-        currentImage.addEventListener("animationend",chooseGoodOrBad);
-    }
+    currentImage.addEventListener("animationend", chooseGoodOrBad);
+  } else {
+    point--
+    pointLabel.innerHTML = "" + point + " point";
+
+    currentImage.addEventListener("animationend", chooseGoodOrBad);
+  }
 
 
 }
 
-function timer () {
+function timer() {
 
-    // Lad tiden gå ned 1 sek af gangen
+  // Lad tiden gå ned 1 sek af gangen
 
-    time --;
+  time--;
 
-    // Stop spillet hvis tiden er under 0
+  // Stop spillet hvis tiden er under 0
 
-    if (time < 0) {
+  if (time < 0) {
 
-            levelComplete()
+    levelComplete()
 
-    }
+  }
 
-    //Hvis tiden er over 0 bliv ved med at tælle ned
+  //Hvis tiden er over 0 bliv ved med at tælle ned
+  else {
 
-    else{
+    time.innerHTML = "" + time + " sek tilbage";
 
-        time.innerHTML = ""+ time +" sek tilbage";
-
-    }
+  }
 }
 
 function gameOver() {
 
-    //Fjern animationer og eventlistener
-    anmeldButton.removeEventListener("click", clickAnmeld);
-    delButton.removeEventListener("click", clickDel);
-    currentImage.classList.remove("scroll_out");
+  //Fjern animationer og eventlistener
+  anmeldButton.removeEventListener("click", clickAnmeld);
+  delButton.removeEventListener("click", clickDel);
+  currentImage.classList.remove("scroll_out");
 
-    //Vis skærm og knap
+  //Vis skærm og knap
 
-    gameOverScreen.style.display ="block";
-    replayButton.style.display="block";
+  gameOverScreen.style.display = "block";
+  replayButton.style.display = "block";
 
-    //Stop baggrundsmusik
-    backgroundMusic.pause();
-
-
-    //Afspil lyd
-    gameOverSound.load();
-    gameOverSound.play();
-
-    //Tilføj animation
-    replayButton.classList.add("pulse");
-
-    //Tilføj eventlistener
-    replayButton.addEventListener("click", tryAgain);
+  //Stop baggrundsmusik
+  backgroundMusic.pause();
 
 
-}
+  //Afspil lyd
+  gameOverSound.load();
+  gameOverSound.play();
 
-function levelComplete () {
+  //Tilføj animation
+  replayButton.classList.add("pulse");
 
-    //Fjern animationer og eventlistener
-    anmeldButton.removeEventListener("click", clickAnmeld);
-    delButton.removeEventListener("click", clickDel);
-    currentImage.classList.remove("scroll_out");
+  //Tilføj eventlistener
+  replayButton.addEventListener("click", tryAgain);
 
-    //Vis skærm og knap
-
-    levelComplete.style.display ="block";
-    replayButton.style.display="block";
-
-    //Stop baggrundsmusik
-    backgroundMusic.pause();
-
-    //Afspil lyd
-    levelCompleteSound.load();
-    levelCompleteSound.play();
-
-    //Tilføj animation
-    replayButton.classList.add("pulse");
-
-    //Tilføj eventlistener
-    replayButton.addEventListener("click", tryAgain);
 
 }
 
-function tryAgain () {
+function levelComplete() {
 
-    //Fjern knap og skærme
-    gameOverScreen.style.display ="none";
-    levelComplete.style.display ="none";
-    replayButton.style.display="none";
+  //Fjern animationer og eventlistener
+  anmeldButton.removeEventListener("click", clickAnmeld);
+  delButton.removeEventListener("click", clickDel);
+  currentImage.classList.remove("scroll_out");
 
-    //Fjern animation og eventlistener
-    replayButton.classList.remove("pulse");
-    replayButton.removeEventListener("click", tryAgain);
+  //Vis skærm og knap
 
-    //Stop lyde
-    levelCompleteSound.pause();
-    gameOverSound.pause();
+  levelComplete.style.display = "block";
+  replayButton.style.display = "block";
 
-    //Send til start
+  //Stop baggrundsmusik
+  backgroundMusic.pause();
 
-    startScreen ();
+  //Afspil lyd
+  levelCompleteSound.load();
+  levelCompleteSound.play();
+
+  //Tilføj animation
+  replayButton.classList.add("pulse");
+
+  //Tilføj eventlistener
+  replayButton.addEventListener("click", tryAgain);
+
+}
+
+function tryAgain() {
+
+  //Fjern knap og skærme
+  gameOverScreen.style.display = "none";
+  levelComplete.style.display = "none";
+  replayButton.style.display = "none";
+
+  //Fjern animation og eventlistener
+  replayButton.classList.remove("pulse");
+  replayButton.removeEventListener("click", tryAgain);
+
+  //Stop lyde
+  levelCompleteSound.pause();
+  gameOverSound.pause();
+
+  //Send til start
+
+  startScreen();
 }

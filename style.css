@@ -1,56 +1,144 @@
 html {
-    font-size: 100%;
+  font-size: 100%;
 }
+
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /*-------------------- FONTS -----------------*/
-
 @font-face {
-    font-family: 'roboto';
-    src: url('fonts/roboto-light-webfont.woff2') format('woff2'),
-         url('fonts/roboto-light-webfont.woff') format('woff');
-
+  font-family: 'roboto';
+  src: url('fonts/roboto-light-webfont.woff2') format('woff2'),
+    url('fonts/roboto-light-webfont.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'vag';
-    src: url('fonts/vag_rounded_light-webfont.woff2') format('woff2'),
-         url('fonts/vag_rounded_light-webfont.woff') format('woff');
-
+  font-family: 'vag';
+  src: url('fonts/vag_rounded_light-webfont.woff2') format('woff2'),
+    url('fonts/vag_rounded_light-webfont.woff') format('woff');
 }
 
-h1
+@font-face {
+  font-family: "vag-rundschrift-d";
+  src: url("https://use.typekit.net/af/121f08/00000000000000000001793a/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/121f08/00000000000000000001793a/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"), url("https://use.typekit.net/af/121f08/00000000000000000001793a/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+}
 
-h2
+h1 {
+  font-family: "vag-rundschrift-d", sans-serif;
+  font-size: 8rem;
+  color: white;
+  font-weight: lighter;
+}
 
-p
+h2 {
+  font-family: "vag-rundschrift-d", sans-serif;
+  font-size: 6rem;
+  color: white;
+  font-weight: lighter;
+}
+
+p {
+  font-family: "vag-rundschrift-d", sans-serif;
+  font-size: 4rem;
+  color: white;
+  font-weight: lighter;
+}
+
+/*-------------------- Tekst Intro ----------------*/
+#intro_text {
+  width: 35vw;
+  height: 15vw;
+  top: 10vw;
+  left: 15vw;
+  z-index: 1;
+  position: absolute;
+  user-select: none;
+  display: none;
+}
+
+/*-------------------- Tekst GameOver ----------------*/
+#go_txt_h {
+  width: 40vw;
+  height: 10vw;
+  top: 10vw;
+  left: 35vw;
+  z-index: 1;
+  position: absolute;
+  user-select: none;
+  display: none;
+}
+
+#go_txt_p_left {
+  width: 20vw;
+  height: 10vw;
+  bottom: 5vw;
+  left: 5vw;
+  z-index: 1;
+  position: absolute;
+  user-select: none;
+  display: none;
+}
+
+#go_txt_p_right {
+  width: 40vw;
+  height: 5vw;
+  bottom: 5vw;
+  right: 5vw;
+  z-index: 1;
+  position: absolute;
+  user-select: none;
+  display: none;
+}
+
+/*-------------------- Tekst levelComplete ----------------*/
+#lc_txt_h {
+  width: 20vw;
+  height: 10vw;
+  top: 10vw;
+  left: 35vw;
+  z-index: 1;
+  position: absolute;
+  user-select: none;
+  display: none;
+}
+
+#lc_txt_p {
+  width: 30vw;
+  height: 5vw;
+  bottom: 5vw;
+  left: 35vw;
+  z-index: 1;
+  position: absolute;
+  user-select: none;
+  display: none;
+}
 
 /*-------------------- SCREEN ----------------*/
-
 #screen {
-    width: 100vw;
-    height: 56.25vw;
-    position: relative;
+  width: 100vw;
+  height: 56.25vw;
+  position: relative;
+  z-Index: 0;
 }
 
-
 /*-------------------- GAME ----------------*/
-
 #game {
-    background-color: #6fd9e2;
-    background-image: url(pics/game_scene.svg);
-
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    position: absolute;
+  background-color: #6fd9e2;
+  background-image: url(pics/game_scene.svg);
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  display: none;
 }
 
 /*-------- GAME BACKGROUND ---------*/
-
 #game_background {
   height: 100%;
   width: 100%;
@@ -63,15 +151,13 @@ p
 }
 
 /*-------- GAME ELEMENTS ---------*/
-
 #game_elements {
-  height:100%;
-  width:100%;
+  height: 100%;
+  width: 100%;
   position: absolute;
 }
 
 /*-------- GAME UI ---------*/
-
 #game_ui {
   position: absolute;
   height: 100%;
@@ -79,7 +165,6 @@ p
 }
 
 /* --- SCORE BOARD ----- */
-
 #score_button {
   position: absolute;
   bottom: 1vw;
@@ -90,7 +175,6 @@ p
   background-image: url(pics/point_counter.svg);
   background-size: 100%;
 }
-
 
 #score_text {
   position: absolute;
@@ -103,7 +187,6 @@ p
 }
 
 /*--- TIME BOARD -----*/
-
 #time_board {
   position: absolute;
   top: 0vw;
@@ -111,21 +194,16 @@ p
   font-family: 'vag';
   font-size: 5rem;
 }
+
 /*-------- INTRODUCTION ---------*/
 #introduction {
-
   height: 100%;
   width: 100%;
-  position: absolute;
   background-image: url(pics/introduction.svg);
-  background-size: cover;
+  background-size: 100%;
   position: absolute;
-  user-select: none;
-  pointer-events: none;
-
-    z-index: 1;
-
-    display: none;
+  z-index: 1;
+  display: none;
 }
 
 /*-------- START ---------*/
@@ -135,9 +213,9 @@ p
   width: 100%;
   background-size: cover;
   position: absolute;
-
-    display: none;
+  display: none;
 }
+
 /*-------- GAME OVER ---------*/
 #gameOver {
   background-image: url(pics/taber_skaerm.svg);
@@ -145,8 +223,7 @@ p
   position: absolute;
   height: 100%;
   width: 100%;
-
-    display: none;
+  display: none;
 }
 
 /*-------- LEVEL COMPLETE ---------*/
@@ -156,13 +233,10 @@ p
   position: absolute;
   height: 100%;
   width: 100%;
-
-    display: none;
+  display: none;
 }
 
-
 /*-------------------- KNAPPER ----------------*/
-
 #replay_button {
   background-image: url(pics/replay_button.svg);
   background-size: cover;
@@ -170,12 +244,10 @@ p
   height: 10vw;
   top: 6vw;
   right: 10vw;
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   cursor: pointer;
-
-    display: none;
-
+  display: none;
 }
 
 #point_counter {
@@ -185,10 +257,10 @@ p
   height: 10vw;
   bottom: 6vw;
   left: 40vw;
-  z-index: 1;
+  z-index: 2;
   position: absolute;
   cursor: pointer;
-
+  display: none;
 }
 
 #anmeld_button {
@@ -197,82 +269,225 @@ p
   width: 20vw;
   height: 10vw;
   bottom: 6vw;
-  left: 40vw;
-  z-index: 1;
+  right: 15vw;
+  z-index: 2;
   position: absolute;
   cursor: pointer;
-
+  display: none;
 }
 
 #del_button {
-    background-image: url(pics/del_button.svg);
-    background-size: cover;
-    width: 20vw;
-    height: 10vw;
-    bottom: 6vw;
-    left: 40vw;
-    z-index: 1;
-    position: absolute;
-    cursor: pointer;
+  background-image: url(pics/del_button.svg);
+  background-size: cover;
+  width: 20vw;
+  height: 10vw;
+  bottom: 6vw;
+  left: 15vw;
+  z-index: 2;
+  position: absolute;
+  cursor: pointer;
+  display: none;
 }
 
 #start_button {
-    background-image: url(pics/start_button.svg);
-    background-size: cover;
-    width: 20vw;
-    height: 10vw;
-    bottom: 8vw;
-    left: 25vw;
-    z-index: 1;
-    position: absolute;
-    cursor: pointer;
+  background-image: url(pics/start_button.svg);
+  background-size: cover;
+  width: 20vw;
+  height: 10vw;
+  bottom: 8vw;
+  left: 25vw;
+  z-index: 2;
+  position: absolute;
+  cursor: pointer;
+  display: none;
 }
 
 #agree_button {
-    background-image: url(pics/agree_button.svg);
-    background-size: cover;
-    width: 20vw;
-    height: 10vw;
-    bottom: 8vw;
-    left: 25vw;
-    z-index: 1;
-    position: absolute;
-    cursor: pointer;
-
-    display: none;
+  background-image: url(pics/agree_button.svg);
+  background-size: 100%;
+  width: 15vw;
+  height: 4vw;
+  bottom: 25vw;
+  left: 27vw;
+  z-index: 2;
+  position: absolute;
+  cursor: pointer;
+  display: none;
 }
 
-
-
-
-
-/*-------------------- POLAROID ----------------*/
-
-#nude #animal {
-
-    height: 62.21837088388215vw;
-    width:  26.27349823321555vw;
-
+/*-------------------- POLAROID; ANIMAL----------------*/
+#ani_1 {
+  background-image: url(pics/ani_1.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
 }
 
+#ani_2 {
+  background-image: url(pics/ani_2.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
 
+#ani_3 {
+  background-image: url(pics/ani_3.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
 
+#ani_4 {
+  background-image: url(pics/ani_4.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
 
+#ani_5 {
+  background-image: url(pics/ani_5.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
 
+#ani_6 {
+  background-image: url(pics/ani_6.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
 
+#ani_7 {
+  background-image: url(pics/ani_7.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
+
+#ani_8 {
+  background-image: url(pics/ani_8.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
+
+#ani_9 {
+  background-image: url(pics/ani_9.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
+
+#ani_10 {
+  background-image: url(pics/ani_10.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
+
+#ani_11 {
+  background-image: url(pics/ani_11.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
+
+/*-------------------- POLAROID: NUDES ----------------*/
+#skin_1 {
+  background-image: url(pics/skin_1.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
+
+#skin_2 {
+  background-image: url(pics/skin_2.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
+
+#skin_3 {
+  background-image: url(pics/skin_3.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
+
+#skin_4 {
+  background-image: url(pics/skin_4.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
+
+#skin_5 {
+  background-image: url(pics/skin_5.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
+
+#skin_6 {
+  background-image: url(pics/skin_6.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
+
+#skin_7 {
+  background-image: url(pics/skin_7.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
+
+#skin_8 {
+  background-image: url(pics/skin_8.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
+
+#skin_9 {
+  background-image: url(pics/skin_9.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
+
+#skin_10 {
+  background-image: url(pics/skin_10.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
+
+#skin_11 {
+  background-image: url(pics/skin_11.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
+
+#skin_12 {
+  background-image: url(pics/skin_12.svg);
+  background-size: 100%;
+  height: 62.21837088388215vw;
+  width: 26.27349823321555vw;
+}
 
 /*-------------------- ANIMATIONS ----------------*/
-
-
-.dissappear {
-  animation-name: dissappear_kf;
+.disappear {
+  animation-name: disappear;
   animation-duration: .5s;
   animation-iteration-count: 1;
   animation-timing-function: cubic-bezier(.59, -0.56, .77, 1.34);
   animation-fill-mode: forwards;
 }
 
-@keyframes dissappear_kf {
+@keyframes disappear {
   from {
     transform: scale(1);
   }
@@ -282,22 +497,21 @@ p
   }
 }
 
-
-.puls {
-  animation-name: puls;
-  animation-duration: 5s;
+.pulse {
+  animation-name: pulse;
+  animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
   animation-timing-function: linear;
 }
 
-@keyframes puls {
+@keyframes pulse {
   0% {
     transform: scale(1);
   }
 
   50% {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
   100% {
@@ -305,15 +519,15 @@ p
   }
 }
 
-.pulse {
-  animation-name: pulse;
-  animation-duration: 4s;
-  animation-iteration-count: 1;
+.knap {
+  animation-name: knap;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 }
 
-@keyframes pulse {
+@keyframes knap {
   0% {
     transform: translateY(0vw);
   }
@@ -321,5 +535,4 @@ p
   100% {
     transform: translateY(-4vw);
   }
-
 }

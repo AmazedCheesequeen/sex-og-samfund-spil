@@ -1,103 +1,107 @@
 <!DOCTYPE html>
 <html lang="da">
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>#Share?</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>#Share?</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!--- Lyde og musik -->
+  <!--- Lyde og musik -->
 
-    <audio src="INSERT MUSIC HERE" id="background_music"></audio>
-    <audio src="INSERT MUSIC HERE" id="level_complete_sound"></audio>
-    <audio src="INSERT MUSIC HERE" id="game_over_sound"></audio>
-    <audio src="INSERT MUSIC HERE" id="click_anmeld_sound"></audio>
-    <audio src="INSERT MUSIC HERE" id="click_del_sound"></audio>
+  <audio src="INSERT MUSIC HERE" id="background_music"></audio>
+  <audio src="INSERT MUSIC HERE" id="level_complete_sound"></audio>
+  <audio src="INSERT MUSIC HERE" id="game_over_sound"></audio>
+  <audio src="INSERT MUSIC HERE" id="click_anmeld_sound"></audio>
+  <audio src="INSERT MUSIC HERE" id="click_del_sound"></audio>
 
 
 
-    <!--- Selve spillet -->
+  <!--- Selve spillet -->
 
-    <div id="screen">
+  <div id="screen">
 
     <div id="game">
 
-        <div id="game_background"> </div>
+      <div id="game_background"> </div>
 
     </div>
 
     <div id="game_elements">
 
-        <div id="animal">
+      <div id="animal">
 
-            <div id="ani_1"></div>
-            <div id="ani_2"></div>
-            <div id="ani_3"></div>
-            <div id="ani_4"></div>
-            <div id="ani_5"></div>
-            <div id="ani_6"></div>
-            <div id="ani_7"></div>
-            <div id="ani_8"></div>
-            <div id="ani_9"></div>
-            <div id="ani_10"></div>
-            <div id="ani_11"></div>
+        <div id="ani_1"></div>
+        <div id="ani_2"></div>
+        <div id="ani_3"></div>
+        <div id="ani_4"></div>
+        <div id="ani_5"></div>
+        <div id="ani_6"></div>
+        <div id="ani_7"></div>
+        <div id="ani_8"></div>
+        <div id="ani_9"></div>
+        <div id="ani_10"></div>
+        <div id="ani_11"></div>
 
-        </div>
+      </div>
 
-        <div id="nude">
+      <div id="nude">
 
-            <div id="skin_1"></div>
-            <div id="skin_2"></div>
-            <div id="skin_3"></div>
-            <div id="skin_4"></div>
-            <div id="skin_5"></div>
-            <div id="skin_6"></div>
-            <div id="skin_7"></div>
-            <div id="skin_8"></div>
-            <div id="skin_9"></div>
-            <div id="skin_10"></div>
-            <div id="skin_11"></div>
-            <div id="skin_12"></div>
+        <div id="skin_1"></div>
+        <div id="skin_2"></div>
+        <div id="skin_3"></div>
+        <div id="skin_4"></div>
+        <div id="skin_5"></div>
+        <div id="skin_6"></div>
+        <div id="skin_7"></div>
+        <div id="skin_8"></div>
+        <div id="skin_9"></div>
+        <div id="skin_10"></div>
+        <div id="skin_11"></div>
+        <div id="skin_12"></div>
 
 
-        </div>
+      </div>
 
     </div>
 
 
     <div id="game_ui">
 
-        <div id="button">
+      <div id="button">
 
-            <div id="start_button"></div>
-            <div id="intro_button"></div>
+        <div id="start_button"></div>
+        <div id="intro_button"></div>
 
-            <div id="anmeld_button"></div>
-            <div id="del_button"></div>
-            <div id="agree_button"></div>
-            <div id="replay_button"></div>
+        <div id="anmeld_button"></div>
+        <div id="del_button"></div>
+        <div id="agree_button"></div>
+        <div id="replay_button"></div>
 
-        </div>
+      </div>
 
-            <div id="score_board">
+      <div id="score_board">
 
-                <div id="score_button"></div>
+        <div id="score_button"></div>
 
-                <div id="score_text">0</div>
+        <div id="score_text">0</div>
 
 
-        </div>
+      </div>
 
-            <div id="time_board">30 sek </div>
+      <div id="time_board">30 sek </div>
 
     </div>
 
     <div id="introduction">
 
-        <div id="intro_text"> <p></p></div>
+      <div id="intro_text">
+        <h1>Velkommen til spillet!</h1><br>
+        <p>Du skal nu vælge at dele eller anmelde de billeder du ser.<br>Husk du ikke må dele nøgenbilleder!<br><br>Er du med på reglerne?</p>
+      </div>
 
 
     </div>
@@ -105,23 +109,34 @@
     <div id="start"></div>
 
     <div id="level_complete">
-<div id="txt1"><h1>Det kan vi lide!</h1></div>
-<div id="txt2"><h2>Du har totalt styr på, hvad du må dele på nettet</h2></div>
-<div id="txt3"><p>Hvis du stadig er i tvivl om, hvad der er kategoriseret som nøgenbillede, så tag et kig på www.privatsnak.dk og lær meget mere om deling af billeder.</p></div>
+      <div id="lc_txt_h">
+        <h1>Det kan vi lide!</h1>
+        <h2>Du har totalt styr på, hvad du må dele på nettet</h2>
+      </div>
+      <div id="lc_txt_p">
+        <p>Hvis du stadig er i tvivl om, hvad der er kategoriseret som nøgenbillede, så tag et kig på www.privatsnak.dk og lær meget mere om deling af billeder.</p>
+      </div>
     </div>
 
     <div id="game_over">
-<div id="txt1"><h1>Åh nej, du har delt et nøgenbillede!</h1></div>
-<div id="txt2"><h2>Har du tænkt over hvilke konsekvenser det kan have?</h2></div>
-<div id="txt3"><p>Ifølge loven skal man spørge om lov, før man deler et billede af andre, og hvis du er under 18, må du ikke lægge nøgenbilleder op af dig selv på nettet, da det er børneporno.</p></div>
-<div id="txt4"><p>Du kan læse meget mere om emnet på www.privatsnak.dk.</p></div>
+      <div id="go_txt_h">
+        <h1>Åh nej, du har delt et nøgenbillede!</h1><br>
+        <h2>Har du tænkt over hvilke konsekvenser det kan have?</h2>
+      </div>
+      <div id="go_txt_p_left">
+        <p>Ifølge loven skal man spørge om lov, før man deler et billede af andre, og hvis du er under 18, må du ikke lægge nøgenbilleder op af dig selv på nettet, da det er børneporno.</p>
+      </div>
+      <div id="go_txt_p_right">
+        <p>Du kan læse meget mere om emnet på www.privatsnak.dk.</p>
+      </div>
 
 
     </div>
 
-    </div>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 
 </body>
+
 </html>
