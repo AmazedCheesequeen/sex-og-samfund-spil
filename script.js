@@ -26,10 +26,10 @@ let pointLabel = document.querySelector("#score_text")
 let gameTime;
 
 //Level complete skærm og elementer
-let levelCompleteScreen = document.querySelector("#level_complete");
+let levelCompleteScreen = document.querySelector("#levelcomplete");
 
 //Game over skærm og elementer
-let gameOverScreen = document.querySelector("#game_over");
+let gameOverScreen = document.querySelector("#gameover");
 let replayButton = document.querySelector("#replay_button");
 
 
@@ -136,6 +136,13 @@ function hideIntro() {
 
       currentImage.classList.remove("scroll_out");
       currentImage.removeEventListener("animationend", chooseGoodOrBad);
+
+        currentImage.style.display="none";
+
+        //Sæt eventlistener på igen
+
+        anmeldButton.addEventListener("click", clickAnmeld);
+  delButton.addEventListener("click", clickDel);
     }
 
     // Laver if sætning, hvor der er 50% chance for nude eller dyrebillede
@@ -184,6 +191,10 @@ function startGame() {
   start.classList.remove("disappear");
   start.removeEventListener("animationend", startGame);
 
+    //Vis foreground
+
+    document.querySelector("#game_foreground").style.display="block";
+
   //Nulstil tid og point
   point = 0;
   time = 30;
@@ -228,7 +239,10 @@ function clickDel() {
   if (currentImage.id.includes("skin")) {
 
     gameOver();
-  } else {
+
+  }
+
+else {
     point++
     pointLabel.innerHTML = "" + point + "";
 
@@ -250,8 +264,8 @@ function clickAnmeld() {
   currentImage.classList.remove("scroll_in");
 
   //Afspil lyd
-  AnmeldSound.load();
-  AnmeldSound.play();
+  anmeldSound.load();
+  anmeldSound.play();
 
   //Tilføj animation på knap
   anmeldButton.classList.add("scale");
@@ -289,7 +303,7 @@ function timer() {
 
   if (time < 0) {
 
-    levelComplete();
+    levelComplete() ;
 
   }
 
@@ -304,6 +318,10 @@ function timer() {
 function gameOver() {
 
     console.log("gameOver");
+
+    // Fjern foreground
+
+    document.querySelector("#game_foreground").style.display="none";
 
   //Fjern animationer og eventlistener
   anmeldButton.removeEventListener("click", clickAnmeld);
@@ -339,6 +357,10 @@ function levelComplete() {
 
     console.log("levelComplete");
 
+    // Fjern foreground
+
+    document.querySelector("#game_foreground").style.display="none";
+
   //Fjern animationer og eventlistener
   anmeldButton.removeEventListener("click", clickAnmeld);
   delButton.removeEventListener("click", clickDel);
@@ -373,7 +395,7 @@ function tryAgain() {
 
   //Fjern knap og skærme
   gameOverScreen.style.display = "none";
-  levelComplete.style.display = "none";
+  levelCompleteScreen.style.display = "none";
   replayButton.style.display = "none";
 
   //Fjern animation og eventlistener

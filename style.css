@@ -71,7 +71,7 @@ p {
   z-index: 1;
   position: absolute;
   user-select: none;
-  display: none;
+
 }
 
 #go_txt_p_left {
@@ -82,7 +82,7 @@ p {
   z-index: 1;
   position: absolute;
   user-select: none;
-  display: none;
+
 }
 
 #go_txt_p_right {
@@ -93,7 +93,7 @@ p {
   z-index: 1;
   position: absolute;
   user-select: none;
-  display: none;
+
 }
 
 /*-------------------- Tekst levelComplete ----------------*/
@@ -105,7 +105,7 @@ p {
   z-index: 1;
   position: absolute;
   user-select: none;
-  display: none;
+
 }
 
 #lc_txt_p {
@@ -116,7 +116,7 @@ p {
   z-index: 1;
   position: absolute;
   user-select: none;
-  display: none;
+
 }
 
 /*-------------------- SCREEN ----------------*/
@@ -150,15 +150,21 @@ p {
 
 /*-------- GAME FOREGROUND ---------*/
 #game_foreground {
-  height: 100%;
-  width: 100%;
+  height: 61.58vw;
+  width: 48vw;
   position: absolute;
-  background-image: url(pics/foreground.svg);
+  background-image: url(pics/foreground-01.svg);
   background-size: cover;
   position: absolute;
   user-select: none;
   pointer-events: none;
-  z-index: 1;
+
+    top:1.4vw;
+    left:15.6vw;
+
+z-index: 2;
+
+    display: none;
 }
 
 /*-------- GAME ELEMENTS ---------*/
@@ -167,6 +173,8 @@ p {
   position: absolute;
     top: 16vw;
     left: 41vw;
+
+
 }
 
 /*-------- GAME UI ---------*/
@@ -240,22 +248,27 @@ p {
 }
 
 /*-------- GAME OVER ---------*/
-#gameOver {
+#gameover {
   background-image: url(pics/taber_skaerm.svg);
+
   background-size: cover;
   position: absolute;
-  height: 100%;
   width: 100%;
+  height: 100%;
+
+
   display: none;
 }
 
 /*-------- LEVEL COMPLETE ---------*/
-#levelComplete {
+#levelcomplete {
   background-image: url(pics/vinder_skaerm.svg);
+
   background-size: cover;
   position: absolute;
   height: 100%;
   width: 100%;
+
   display: none;
 }
 
@@ -291,7 +304,7 @@ p {
   background-size: cover;
   width: 20vw;
   height: 10vw;
-  bottom: 6vw;
+  bottom: 25vw;
   right: 15vw;
   position: absolute;
   cursor: pointer;
@@ -302,7 +315,7 @@ p {
   background-size: cover;
   width: 20vw;
   height: 10vw;
-  bottom: 6vw;
+  bottom: 25vw;
   left: 15vw;
   position: absolute;
   cursor: pointer;
@@ -671,7 +684,7 @@ p {
 .scroll_in
  {
   animation-name: scroll_in;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
@@ -680,17 +693,24 @@ p {
 @keyframes scroll_in {
   0% {
     transform: translateY(-25vw);
+
+      opacity: 0;
   }
+
+    10%{
+        opacity: 0;
+    }
 
   100% {
     transform: translateY(0vw);
+      opacity: 1;
   }
 }
 
 .scroll_out {
   animation-name: scroll_out;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-timing-function: reverse;
 }
@@ -698,9 +718,18 @@ p {
 @keyframes scroll_out {
   0% {
     transform: translateY(0vw);
+      opacity: 1;
   }
+    10%{
+        opacity: 0.5;
+    }
+
+    60%{
+        opacity: 0;
+    }
 
   100% {
     transform: translateY(30vw);
+      opacity: 0;
   }
 }
