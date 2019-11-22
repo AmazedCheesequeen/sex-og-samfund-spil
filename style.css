@@ -42,7 +42,7 @@ h2 {
 
 p {
     font-family: "vag-rundschrift-d", sans-serif;
-    font-size: 1vw;
+    font-size: 1.5vw;
     color: white;
     font-weight: lighter;
 }
@@ -86,7 +86,7 @@ p {
 #go_txt_p_left {
     width: 40vw;
     height: 5vw;
-    bottom: 2vw;
+    bottom: 3vw;
     left: 3vw;
     z-index: 1;
     position: absolute;
@@ -95,7 +95,7 @@ p {
 }
 
 #go_txt_p_right {
-    width: 30vw;
+    width: 35vw;
     height: 5vw;
     bottom: 1vw;
     right: 3vw;
@@ -109,7 +109,7 @@ p {
 #lc_txt_h {
     width: 65vw;
     height: 10vw;
-    top: -1vw;
+    top: 2vw;
     left: 15vw;
     z-index: 1;
     position: absolute;
@@ -653,7 +653,7 @@ a {
 
 .pulse {
     animation-name: pulse;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-iteration-count: infinite;
     animation-fill-mode: both;
     animation-timing-function: linear;
@@ -675,7 +675,7 @@ a {
 
 .knap {
     animation-name: knap;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-iteration-count: infinite;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
@@ -694,7 +694,7 @@ a {
 
 .scroll_in {
     animation-name: scroll_in;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
@@ -719,7 +719,7 @@ a {
 
 .scroll_out {
     animation-name: scroll_out;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-timing-function: reverse;
